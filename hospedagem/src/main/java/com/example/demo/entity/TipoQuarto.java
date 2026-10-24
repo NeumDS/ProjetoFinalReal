@@ -33,4 +33,6 @@ public class TipoQuarto {
     private Integer capacidade;
 
     private BigDecimal valorDiaria;
+
+    private Boolean ativo;
 }

@@ -25,13 +25,47 @@ public class TipoQuartoService {
     }
 
     @Transactional
-    public TipoQuartoDTO cadastrar(TipoQuartoDTO requesDto) {
-        TipoQuarto cadastro = mapper.toEntity(requesDto);
+    public TipoQuartoDTO cadastrar(TipoQuartoDTO requestDto) {
+        TipoQuarto cadastro = mapper.toEntity(requestDto);
 
         TipoQuarto cadastroSalvo = repository.save(cadastro);
 
         return mapper.toDto(cadastroSalvo);
 }
+
+    public TipoQuartoDTO buscarPorID(Long id) {
+        TipoQuarto tipoQuarto = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
+
+        return mapper.toDto(tipoQuarto);
+    }
     
-    
+    @Transactional
+    public TipoQuartoDTO atualizar(Long id, TipoQuartoDTO requesDto) {
+        TipoQuarto tipoQuarto = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
+
+        tipoQuarto.setNome(requesDto.nome());
+        tipoQuarto.setDescricao(requesDto.descricao());
+        tipoQuarto.setCapacidade(requesDto.capacidade());
+        tipoQuarto.setValorDiaria(requesDto.valorDiaria());
+
+        TipoQuarto TipoQuartoAtualizado = repository.save(tipoQuarto);
+
+        return mapper.toDto(TipoQuartoAtualizado);
+
+    }
+
+    @Transactional
+    public void excluir(Long id) {
+        TipoQuarto tipoQuarto = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
+
+        tipoQuarto.setAtivo(false);
+
+        repository.save(tipoQuarto);
+
+            
+    }
+
 }

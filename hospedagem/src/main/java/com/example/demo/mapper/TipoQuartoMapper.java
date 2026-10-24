@@ -16,6 +16,7 @@ public class TipoQuartoMapper {
             .descricao(dto.descricao())
             .capacidade(dto.capacidade())
             .valorDiaria(dto.valorDiaria())
+            .ativo(true)
             .build();
     }
 

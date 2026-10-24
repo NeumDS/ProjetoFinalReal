@@ -16,6 +16,7 @@ public class QuartoMapper {
             .numero(dto.numero())
             .tipoQuarto(tipoQuarto)
             .status(dto.status())
+            .ativo(true)
             .build();
     }
 

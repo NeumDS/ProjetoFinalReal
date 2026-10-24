@@ -38,4 +38,5 @@ public class Quarto {
     @Enumerated(EnumType.STRING)
     private StatusQuarto status;
 
+    private Boolean ativo;
 }
