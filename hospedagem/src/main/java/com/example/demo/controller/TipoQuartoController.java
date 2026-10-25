@@ -47,7 +47,7 @@ public class TipoQuartoController {
         return ResponseEntity.ok(service.buscarPorID(id));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}") 
     public ResponseEntity<TipoQuartoDTO> atualizar(
             @PathVariable Long id,
             @RequestBody TipoQuartoDTO requestDto) {
@@ -63,9 +63,11 @@ public class TipoQuartoController {
         return ResponseEntity.noContent().build();
     }
 
-@PutMapping("/{id}/reativar") 
+    @PutMapping("/{id}/reativar") 
     public ResponseEntity<Void> reativar(@PathVariable Long id) {
+        
         service.reativar(id);
+        
         return ResponseEntity.noContent().build();
     }
 

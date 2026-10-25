@@ -72,4 +72,13 @@ public class QuartoService {
 
         repository.save(quarto);
     }
+
+    public void reativar(Long id) {
+        Quarto quarto = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Quarto não encontrado"));
+        
+            quarto.setAtivo(true);
+
+            repository.save(quarto);
+    }
 }
