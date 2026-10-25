@@ -68,4 +68,13 @@ public class TipoQuartoService {
             
     }
 
+    public void reativar(Long id) {
+        TipoQuarto tipoQuarto = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
+
+        tipoQuarto.setAtivo(true);
+
+        repository.save(tipoQuarto);
+    }
+
 }
