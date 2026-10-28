@@ -36,4 +36,6 @@ public class Servico {
     @Column(nullable = false)
     private BigDecimal valorServico;
 
+    private Boolean ativo;
+
 }

@@ -41,14 +41,14 @@ public class TipoQuartoService {
     }
     
     @Transactional
-    public TipoQuartoDTO atualizar(Long id, TipoQuartoDTO requesDto) {
+    public TipoQuartoDTO atualizar(Long id, TipoQuartoDTO requestDto) {
         TipoQuarto tipoQuarto = repository.findById(id)
             .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
 
-        tipoQuarto.setNome(requesDto.nome());
-        tipoQuarto.setDescricao(requesDto.descricao());
-        tipoQuarto.setCapacidade(requesDto.capacidade());
-        tipoQuarto.setValorDiaria(requesDto.valorDiaria());
+        tipoQuarto.setNome(requestDto.nome());
+        tipoQuarto.setDescricao(requestDto.descricao());
+        tipoQuarto.setCapacidade(requestDto.capacidade());
+        tipoQuarto.setValorDiaria(requestDto.valorDiaria());
 
         TipoQuarto TipoQuartoAtualizado = repository.save(tipoQuarto);
 
@@ -75,6 +75,7 @@ public class TipoQuartoService {
         tipoQuarto.setAtivo(true);
 
         repository.save(tipoQuarto);
+        
     }
 
 }

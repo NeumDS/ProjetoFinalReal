@@ -10,6 +10,6 @@ import com.example.demo.entity.TipoQuarto;
 @Repository
 public interface TipoQuartoRepository extends JpaRepository<TipoQuarto, Long> {
 
-    List<TipoQuarto> findByAtivoTrue();
+    List<TipoQuarto> findByAtivoTrue();    
 
 }
