@@ -47,4 +47,7 @@ public class Reserva {
     private BigDecimal valorDiaria;
 
     private Integer diasTotais;
+
+    private Boolean ativo = true;
+    
 }

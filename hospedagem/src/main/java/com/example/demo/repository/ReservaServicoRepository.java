@@ -1,13 +1,13 @@
-package com.example.demo.repository;
+// package com.example.demo.repository;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.entity.ReservaServico;
+// import com.example.demo.entity.ReservaServico;
 
-public interface ReservaServicoRepository extends JpaRepository<ReservaServico, Long>{
+// public interface ReservaServicoRepository extends JpaRepository<ReservaServico, Long>{
     
-    List<ReservaServico> findByAtivoTrue();
+//     List<ReservaServico> findByAtivoTrue();
 
-}
+// }
