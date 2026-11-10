@@ -12,6 +12,7 @@ import com.example.demo.entity.TipoQuarto;
 public class QuartoMapper {
     
     public Quarto toEntity(QuartoDTO dto, TipoQuarto tipoQuarto){
+        
         return Quarto.builder()
             .numero(dto.numero())
             .tipoQuarto(tipoQuarto)
@@ -22,6 +23,7 @@ public class QuartoMapper {
 
     public QuartoDTO toDto(Quarto entity){
         if (entity == null) return null;
+
         return new QuartoDTO(
             entity.getId(),
             entity.getNumero(),

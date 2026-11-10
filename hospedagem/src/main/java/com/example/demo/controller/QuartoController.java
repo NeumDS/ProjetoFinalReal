@@ -50,9 +50,9 @@ public class QuartoController {
     @PutMapping("/{id}")
     public ResponseEntity<QuartoDTO> atualizar(
         @PathVariable Long id,
-        @RequestBody QuartoDTO requesDto) {
+        @RequestBody QuartoDTO requestDto) {
 
-        return  ResponseEntity.ok(service.atualizar(id, requesDto, null));  
+        return ResponseEntity.ok(service.atualizar(id, requestDto));  
     }
 
     @DeleteMapping("/{id}")

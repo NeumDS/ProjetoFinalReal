@@ -49,9 +49,13 @@ public class QuartoService {
     }
 
     @Transactional
-    public QuartoDTO atualizar(Long id, QuartoDTO requestDTO, TipoQuarto tipoQuarto) {
+    public QuartoDTO atualizar(Long id, QuartoDTO requestDTO) {
         Quarto quarto = repository.findById(id)
             .orElseThrow(() -> new RuntimeException("Quarto não encontrado"));
+
+        TipoQuarto tipoQuarto = repository2
+            .findById(requestDTO.tipoQuartoID())
+            .orElseThrow(() -> new RuntimeException("Tipo de quarto não encontrado"));
 
         quarto.setNumero(requestDTO.numero());
         quarto.setTipoQuarto(tipoQuarto);
@@ -60,7 +64,6 @@ public class QuartoService {
         Quarto quartoAtualizado = repository.save(quarto);
 
         return mapper.toDto(quartoAtualizado);
-
     }
 
     @Transactional

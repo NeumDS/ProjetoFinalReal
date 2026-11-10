@@ -40,4 +40,6 @@ public class ReservaServico {
 
     private BigDecimal valorUnitario;
 
+    private Boolean ativo;
+
 }
