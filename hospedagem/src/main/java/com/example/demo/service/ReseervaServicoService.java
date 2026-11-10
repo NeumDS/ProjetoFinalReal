@@ -9,6 +9,7 @@ import com.example.demo.entity.Reserva;
 import com.example.demo.entity.ReservaServico;
 import com.example.demo.entity.Servico;
 import com.example.demo.mapper.ReservaServicoMapper;
+import com.example.demo.repository.ReservaRepository;
 import com.example.demo.repository.ReservaServicoRepository;
 import com.example.demo.repository.ServicoRepository;
 
@@ -37,7 +38,7 @@ public class ReseervaServicoService {
         Servico servico = repository3.findById(dto.servicoId())
             .orElseThrow(() -> new RuntimeException("Serviço não encontrado"));
 
-        ReservaServico reservaServico = mapper.toEntity(dto, reserva, servico);
+        ReservaServico reservaServico = mapper.toEntity(dto, servico, reserva);
 
         return mapper.toDto(repository.save(reservaServico));
     }
