@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.ReservaServico;
 
-public interface ReservaServicoRepository extends JpaRepository<ReservaServico, Long{
+public interface ReservaServicoRepository extends JpaRepository<ReservaServico, Long>{
     
     List<ReservaServico> findByAtivoTrue();
 
