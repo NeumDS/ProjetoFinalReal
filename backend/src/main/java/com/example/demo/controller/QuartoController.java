@@ -19,7 +19,7 @@ import com.example.demo.service.QuartoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController 
-@RequestMapping("/quarto")
+@RequestMapping("/quartos")
 @RequiredArgsConstructor 
 public class QuartoController {
     

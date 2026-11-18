@@ -18,7 +18,7 @@ import com.example.demo.service.PagamentoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController 
-@RequestMapping("pagamentos")
+@RequestMapping("/pagamentos")
 @RequiredArgsConstructor 
 public class PagamentoController {
     

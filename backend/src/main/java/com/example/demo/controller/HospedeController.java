@@ -19,7 +19,7 @@ import com.example.demo.service.HospedeService;
 import lombok.RequiredArgsConstructor;
 
 @RestController 
-@RequestMapping("/hospede")
+@RequestMapping("/hospedes")
 @RequiredArgsConstructor 
 public class HospedeController {
     
